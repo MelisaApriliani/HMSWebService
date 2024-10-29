@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface MedicalRecordRepository extends JpaRepository<MedicalRecord, Long> {
-    List<MedicalRecord> findByPatientId(Long patientId);
+public interface MedicalRecordRepository extends JpaRepository<MedicalRecord, Integer> {
+    MedicalRecord findMedicalRecordById(int id);
+    List<MedicalRecord> findByPatientId(int patientId);
 }

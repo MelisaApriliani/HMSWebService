@@ -14,25 +14,21 @@ import java.util.List;
 @Service
 public class PatientServiceImpl implements PatientService {
 
-    @Autowired
-    private PatientRepository patientRepository;
+
+    private final PatientRepository patientRepository;
 
     @Autowired
-    private AppointmentRepository appointmentRepository;
-
-    @Autowired
-    private MedicalRecordRepository medicalRecordRepository;
-
-    @Override
-    public Patient bookAppointment(Patient patient, Long doctorId, LocalDateTime date) {
-        // Implement the logic for booking an appointment
-        return patient;
+    public PatientServiceImpl(PatientRepository patientRepository) {
+        this.patientRepository = patientRepository;
     }
 
     @Override
-    public List<MedicalRecord> viewMedicalHistory(Long patientId) {
-        // Fetch patient's medical history
-        return medicalRecordRepository.findByPatientId(patientId);
+    public Patient getPatientById(int id) {
+        return patientRepository.findByPatientId(id);
     }
 
+    @Override
+    public Patient updatePatient(Patient patient) {
+        return null;
+    }
 }

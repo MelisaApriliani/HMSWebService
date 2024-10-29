@@ -9,7 +9,7 @@ public class Appointment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long appointmentId;
+    private int appointmentId;
 
     private LocalDateTime date;
     private String time;

@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface PatientService {
-    Patient bookAppointment(Patient patient, Long doctorId, LocalDateTime date);
-    List<MedicalRecord> viewMedicalHistory(Long patientId);
+   Patient getPatientById(int id);
+   Patient updatePatient(Patient patient);
 
 }
