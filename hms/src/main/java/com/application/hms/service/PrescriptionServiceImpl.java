@@ -1,21 +1,24 @@
 package com.application.hms.service;
 
 import com.application.hms.model.Prescription;
+import com.application.hms.repository.PrescriptionRepository;
 
 public class PrescriptionServiceImpl implements PrescriptionService {
 
-    @Override
-    public Prescription createPrescription(Prescription prescription) {
-        return null;
+    private final PrescriptionRepository prescriptionRepository;
+
+    public PrescriptionServiceImpl(PrescriptionRepository prescriptionRepository) {
+        this.prescriptionRepository = prescriptionRepository;
     }
+
 
     @Override
     public Prescription updatePrescription(Prescription prescription) {
-        return null;
+        return prescriptionRepository.save(prescription);
     }
 
     @Override
     public Prescription getPrescription(int prescriptionId) {
-        return null;
+        return prescriptionRepository.findPrescriptionById(prescriptionId);
     }
 }

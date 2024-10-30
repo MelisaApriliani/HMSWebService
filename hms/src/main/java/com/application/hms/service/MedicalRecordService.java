@@ -7,7 +7,7 @@ import com.application.hms.model.Patient;
 import java.util.List;
 
 public interface MedicalRecordService {
-    int addMedicalRecord(MedicalRecord medicalRecord);
+    MedicalRecord addMedicalRecord(MedicalRecord medicalRecord);
     MedicalRecord getMedicalRecordById(int id);
     List<MedicalRecord> getMedicalRecordByPatientId(int patientId);
 }
